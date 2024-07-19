@@ -1,7 +1,15 @@
 # WorkoutApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+## To start the application
+1. Clone The repo
+2. run npm i
+3. run ng serve
+## Tests Have been added for app.component and workout.service with 100% code coverage
 
+![Screenshot (39)](https://github.com/user-attachments/assets/b6bf1912-66a6-48db-97b8-d70d3b8571a1)
+
+   
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
