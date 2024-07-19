@@ -1,0 +1,25 @@
+<div *ngIf="showModal; else hiddenTemplate">
+  <app-add-workout-modal (closeModal)="toggleModal()"></app-add-workout-modal>
+</div>
+
+<ng-template #hiddenTemplate>
+  <div class="w-full h-full flex flex-col items-center pt-[100px]">
+    <p class="text-5xl font-bold text-black font-poppins">
+      Welcome to FitTrack
+    </p>
+
+    <p class="text-xl font-bold text-black font-poppins w-[530px] text-center">
+      Click on your name to see visual representation of your journey.
+    </p>
+    <div class="w-[80%] min-h-[500px] z-[4] mt-12">
+      <button
+        (click)="toggleModal()"
+        id="open-modal-button"
+        class="border-2 px-4 py-3 rounded-md mb-4 font-poppins bg-black text-white"
+      >
+        Add A New Workout
+      </button>
+      <app-workout-table />
+    </div>
+  </div>
+</ng-template>

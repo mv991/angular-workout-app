@@ -1,0 +1,119 @@
+<div class="overflow-hidden backdrop"></div>
+<div
+  class="bg-white h-[500px] absolute w-[500px] rounded-2xl z-[3] ml-[-250px] left-[50%] top-[50%] mt-[-250px] modal"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    height="38"
+    width="38"
+    viewBox="0 0 512 512"
+    class="ml-auto mt-3 mr-3 cursor-pointer"
+    (click)="close()"
+  >
+    <path
+      fill="#523a92"
+      d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
+    />
+  </svg>
+
+  <div class="example-container items-center flex flex-col h-full">
+    <p class="text-2xl mb-[70px] font-poppins font-[500]">Add A New Workout</p>
+    <form
+      class="w-[80%] flex flex-col gap-4 h-[300px] mx-auto p-2"
+      #userForm="ngForm"
+      (ngSubmit)="onSubmit(userForm)"
+    >
+      <mat-form-field hintLabel="Max 10 characters" class="w-full">
+        <mat-label>Enter your Name</mat-label>
+        <input
+          matInput
+          #input
+          maxlength="15"
+          placeholder="Ex. Nougat"
+          name="userName"
+          ngModel
+          required
+        />
+      </mat-form-field>
+      <div class="w-full flex gap-8">
+        <mat-form-field>
+          <mat-label>Workout Type</mat-label>
+          <mat-select name="type" ngModel required>
+            <mat-option value="Swimming">Swimming</mat-option>
+            <mat-option value="Running">Running</mat-option>
+            <mat-option value="Yoga">Yoga</mat-option>
+            <mat-option value="Cycling">Cycling</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Workut Duration</mat-label>
+          <input
+            matInput
+            #input
+            placeholder="Ex. 20"
+            type="number"
+            name="minutes"
+            ngModel
+            min="1"
+            required
+          />
+        </mat-form-field>
+      </div>
+      <div class="flex gap-5 w-full">
+        <button
+          class="w-full p-3 bg-[#523A92] text-white text-lg rounded-md"
+          [disabled]="userForm.invalid"
+        >
+          Add Workout
+        </button>
+      </div>
+    </form>
+  </div>
+  <!-- <form
+    class="w-[80%] flex flex-col h-full mx-auto items-center justify-center p-2"
+    #userForm="ngForm"
+    (ngSubmit)="onSubmit(userForm)"
+  >
+    <div class="w-full relative border-black border-2 rounded-lg">
+      <p class="absolute text-blue-500 top-[-14px] bg-white left-3">
+        User Name*
+      </p>
+      <input
+        class="w-full p-4 z-[1] h-[60px] focus:outline-none rounded-lg"
+        placeholder="Ex: John Doe"
+        name="userName"
+        type="text"
+        ngModel
+      />
+    </div>
+    <div class="w-full flex justify-center">
+      <div
+        for="dropdown"
+        class="flex flex-col pl-2 py-1 w-1/2 text-start border-y-2"
+      >
+        <p class="text-sm text-gray-500">Workout Type*</p>
+        <select
+          name="type"
+          placeholder="Workout Type*"
+          id="dropdown"
+          class="text-lg"
+          ngModel
+        >
+          <option>Running</option>
+          <option>Cycling</option>
+          <option>Swimming</option>
+          <option>Yoga</option>
+        </select>
+      </div>
+      <input
+        name="minutes"
+        placeholder="Workout minutes*"
+        type="number"
+        class="w-1/2"
+        ngModel
+      />
+    </div>
+    <button type="submit">Submit</button>
+  </form> -->
+  <!-- </div> -->
+</div>
